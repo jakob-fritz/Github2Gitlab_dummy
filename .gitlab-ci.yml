@@ -1,0 +1,6 @@
+Testing params:
+  stage: test
+  script:
+    - echo "Hello World"
+    - echo "$CI_COMMIT_SHA"
+    - echo "$CI_COMMIT_BRANCH"
