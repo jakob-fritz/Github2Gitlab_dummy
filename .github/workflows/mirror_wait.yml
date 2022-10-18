@@ -23,8 +23,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v1
+      - name: install github2gitlab
+        run: |
+          pip install github2gitlab==1.5.5
       - name: Mirror + trigger CI
-        uses: jakob-fritz/github2gitlab_action@master
         run: |
           github2gitlab \
             --gitlab-url ${{ GITLAB_URL }} \
