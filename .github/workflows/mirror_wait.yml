@@ -41,7 +41,7 @@ jobs:
       - name: Mirror + trigger CI
         run: |
           github2gitlab \
-            --gitlab-url "https://gitlab.hzdr.de/" \
+            --gitlab-url "git@gitlab.hzdr.de" \
             --gitlab-token "${{ secrets.GITHUB_TOKEN }}" \
             --gitlab-repo "j.fritz/github2gitlab_dummy" \
             --github-token "${{ secrets.GITHUB_TOKEN }}" \
