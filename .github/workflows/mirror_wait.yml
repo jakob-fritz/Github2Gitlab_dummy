@@ -28,6 +28,12 @@ jobs:
         with:
           name: jakob-fritz/github2gitlab_action
           path: github2gitlab_action
+      - name: check cloning
+        run: |
+          ls
+      - name: check cloning
+        run: |
+          ls ./github2gitlab_action/
       - name: install github2gitlab
         run: |
           pip install ./github2gitlab_action
