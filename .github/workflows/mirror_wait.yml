@@ -23,9 +23,14 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v1
+      - name: pull github2gitlab
+        uses: actions/checkout@v3
+        with:
+          name: jakob-fritz/github2gitlab_action
+          path: github2gitlab_action
       - name: install github2gitlab
         run: |
-          pip install github2gitlab==1.5.5
+          pip install ./github2gitlab_action
       - name: Mirror + trigger CI
         run: |
           github2gitlab \
