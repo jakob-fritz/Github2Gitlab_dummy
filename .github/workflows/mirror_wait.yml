@@ -40,7 +40,7 @@ jobs:
           pip install ./github2gitlab_action
       - name: Mirror
         run: |
-          mirror.sh
+          ./github2gitlab_action/bin/mirror.sh
       - name: Update Merge-Requests
         run: |
           github2gitlab \
