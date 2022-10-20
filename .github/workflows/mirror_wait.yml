@@ -41,9 +41,10 @@ jobs:
       - name: make mirror executable
         run: |
           chmod +x ./github2gitlab_action/bin/mirror.sh
-      - name: get git info
-        run: |
-          git status
+          chmod +x ./github2gitlab_action/bin/getpasswd.sh
+      # - name: get git info
+      #   run: |
+      #     git status
       - name: Mirror
         run: |
           ./github2gitlab_action/bin/mirror.sh
