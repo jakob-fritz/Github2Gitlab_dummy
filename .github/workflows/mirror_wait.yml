@@ -51,6 +51,7 @@ jobs:
           GITLAB_USERNAME: "j.fritz"
           GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
           GITLAB_REPO_URL: "git@gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
+          FORCE_PUSH: "true"
       - name: Update Merge-Requests
         run: |
           github2gitlab \
