@@ -38,7 +38,10 @@ jobs:
       - name: install github2gitlab
         run: |
           pip install ./github2gitlab_action
-      - name: Mirror + trigger CI
+      - name: Mirror
+        run: |
+          mirror.sh
+      - name: Update Merge-Requests
         run: |
           github2gitlab \
             --gitlab-url "git@gitlab.hzdr.de" \
