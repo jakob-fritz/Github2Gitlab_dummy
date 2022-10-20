@@ -41,6 +41,9 @@ jobs:
       - name: make mirror executable
         run: |
           chmod +x ./github2gitlab_action/bin/mirror.sh
+      - name: get git info
+        run: |
+          git status
       - name: Mirror
         run: |
           ./github2gitlab_action/bin/mirror.sh
@@ -56,3 +59,4 @@ jobs:
         env:
           GITLAB_USERNAME: "j.fritz"
           GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
+          GITLAB_REPO_URL: "git@gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
