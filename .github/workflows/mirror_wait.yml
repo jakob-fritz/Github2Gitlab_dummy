@@ -59,7 +59,7 @@ jobs:
             --gitlab-url "https://gitlab.hzdr.de" \
             --gitlab-token "${{ secrets.GITHUB_TOKEN }}" \
             --gitlab-repo "j.fritz/github2gitlab_dummy" \
-            --gitlab-repo_id "6234" \
+            --gitlab-repo-id "6234" \
             --github-token "${{ secrets.GITHUB_TOKEN }}" \
             --github-repo jakob-fritz/Github2Gitlab_dummy \
             --ignore-closed
