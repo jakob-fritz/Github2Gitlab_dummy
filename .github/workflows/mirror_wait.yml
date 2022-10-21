@@ -38,15 +38,13 @@ jobs:
       - name: install github2gitlab
         run: |
           pip install ./github2gitlab_action
-      - name: make mirror executable
-        run: |
-          chmod +x ./github2gitlab_action/bin/mirror.sh
-          chmod +x ./github2gitlab_action/bin/getpasswd.sh
       # - name: get git info
       #   run: |
       #     git status
       - name: Mirror
         run: |
+          chmod +x ./github2gitlab_action/bin/mirror.sh
+          chmod +x ./github2gitlab_action/bin/getpasswd.sh
           ./github2gitlab_action/bin/mirror.sh
         env:
           GITLAB_USERNAME: "j.fritz"
