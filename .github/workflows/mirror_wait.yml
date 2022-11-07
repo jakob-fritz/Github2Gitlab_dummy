@@ -55,7 +55,7 @@ jobs:
         run: |
           github2gitlab \
             --gitlab-url "https://gitlab.hzdr.de" \
-            --gitlab-token "${{ secrets.GITHUB_TOKEN }}" \
+            --gitlab-token "${{ secrets.GITLAB_TOKEN }}" \
             --gitlab-repo "j.fritz/github2gitlab_dummy" \
             --gitlab-repo-id "6234" \
             --github-token "${{ secrets.GITHUB_TOKEN }}" \
