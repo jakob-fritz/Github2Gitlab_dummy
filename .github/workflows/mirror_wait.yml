@@ -62,6 +62,6 @@ jobs:
             --github-repo jakob-fritz/Github2Gitlab_dummy \
             --ignore-closed
         env:
-          GITLAB_USERNAME: "j.fritz"
-          GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
+          # GITLAB_USERNAME: "j.fritz"
+          # GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
           GITLAB_REPO_URL: "git@gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
