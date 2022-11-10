@@ -41,18 +41,19 @@ jobs:
       # - name: get git info
       #   run: |
       #     git status
-      - name: Mirror
-        run: |
-          chmod +x ./github2gitlab_action/bin/mirror.sh
-          chmod +x ./github2gitlab_action/bin/getpasswd.sh
-          ./github2gitlab_action/bin/mirror.sh
-        env:
-          GITLAB_USERNAME: "j.fritz"
-          GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
-          GITLAB_REPO_URL: "https://gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
-          FORCE_PUSH: "true"
+      # - name: Mirror
+      #   run: |
+      #     chmod +x ./github2gitlab_action/bin/mirror.sh
+      #     chmod +x ./github2gitlab_action/bin/getpasswd.sh
+      #     ./github2gitlab_action/bin/mirror.sh
+      #   env:
+      #     GITLAB_USERNAME: "j.fritz"
+      #     GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
+      #     GITLAB_REPO_URL: "https://gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
+      #     FORCE_PUSH: "true"
       - name: Update Merge-Requests
         run: |
+          chmod +x ./github2gitlab_action/bin/getpasswd.sh
           github2gitlab \
             --gitlab-url "https://gitlab.hzdr.de" \
             --gitlab-token "${{ secrets.GITLAB_TOKEN }}" \
@@ -63,6 +64,9 @@ jobs:
             --ignore-closed
         env:
           GITLAB_REPO_URL: "git@gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
+          GITLAB_USERNAME: "j.fritz"
+          GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
+          FORCE_PUSH: "true"
       - name: Get state of Gitlab-CI
         run: |
           chmod +x ./github2gitlab_action/bin/get_ci_state.sh
