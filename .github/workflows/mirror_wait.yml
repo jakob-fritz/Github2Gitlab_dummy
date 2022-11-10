@@ -38,15 +38,13 @@ jobs:
       - name: install github2gitlab
         run: |
           pip install ./github2gitlab_action
-      - name: make mirror executable
-        run: |
-          chmod +x ./github2gitlab_action/bin/mirror.sh
-          chmod +x ./github2gitlab_action/bin/getpasswd.sh
       # - name: get git info
       #   run: |
       #     git status
       - name: Mirror
         run: |
+          chmod +x ./github2gitlab_action/bin/mirror.sh
+          chmod +x ./github2gitlab_action/bin/getpasswd.sh
           ./github2gitlab_action/bin/mirror.sh
         env:
           GITLAB_USERNAME: "j.fritz"
@@ -56,13 +54,22 @@ jobs:
       - name: Update Merge-Requests
         run: |
           github2gitlab \
-            --gitlab-url "git@gitlab.hzdr.de" \
-            --gitlab-token "${{ secrets.GITHUB_TOKEN }}" \
+            --gitlab-url "https://gitlab.hzdr.de" \
+            --gitlab-token "${{ secrets.GITLAB_TOKEN }}" \
             --gitlab-repo "j.fritz/github2gitlab_dummy" \
+            --gitlab-repo-id "6234" \
             --github-token "${{ secrets.GITHUB_TOKEN }}" \
             --github-repo jakob-fritz/Github2Gitlab_dummy \
             --ignore-closed
         env:
+          GITLAB_REPO_URL: "git@gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
+      - name: Get state of Gitlab-CI
+        run: |
+          chmod +x ./github2gitlab_action/bin/get_ci_state.sh
+          ./github2gitlab_action/bin/get_ci_state.sh
+        env:
+          GITLAB_HOSTNAME: "gitlab.hzdr.de"
           GITLAB_USERNAME: "j.fritz"
           GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
-          GITLAB_REPO_URL: "git@gitlab.hzdr.de/j.fritz/github2gitlab_dummy.git"
+          GITLAB_PROJECT_ID: "6234"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
