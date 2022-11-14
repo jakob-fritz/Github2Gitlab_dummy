@@ -9,3 +9,4 @@ so that the GitHub-CI can push to GitLab
   - API (Read & Write)
   - Read repository
   - Write repository
+- Add this token in Github as Action-Secret
