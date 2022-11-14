@@ -9,4 +9,3 @@ so that the GitHub-CI can push to GitLab
   - API (Read & Write)
   - Read repository
   - Write repository
-- That should be it
