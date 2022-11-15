@@ -60,7 +60,7 @@ jobs:
         run: |
           chmod +x ./github2gitlab_action/bin/getpasswd.sh
           github2gitlab \
-            --gitlab-url "${{ GITLAB_URL }}" \
+            --gitlab-url "$GITLAB_URL" \
             --gitlab-token "${{ secrets.GITLAB_TOKEN }}" \
             --gitlab-repo "j.fritz/github2gitlab_dummy" \
             --gitlab-repo-id "6234" \
