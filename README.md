@@ -10,3 +10,5 @@ so that the GitHub-CI can push to GitLab
   - Read repository
   - Write repository
 - Add this token in Github as Action-Secret
+- Ask the maintainer of the repo to add your user to the Gitlab-Repo as well
+- Add a repository-secret with your gitlab-username
