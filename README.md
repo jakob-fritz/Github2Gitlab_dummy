@@ -9,6 +9,6 @@ so that the GitHub-CI can push to GitLab
   - API (Read & Write)
   - Read repository
   - Write repository
-- Add this token in Github as Action-Secret
-- Ask the maintainer of the repo to add your user to the Gitlab-Repo as well
-- Add a repository-secret with your gitlab-username
+- Add this token in Github as Action-Secret (named "GITLAB_TOKEN")
+- Ask the maintainer of the repo to add your user to the Gitlab-Repo as well (with at leas Developer-Rights)
+- Add a repository-secret with your gitlab-username (named "GITLAB_USERNAME")
