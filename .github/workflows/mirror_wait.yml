@@ -37,7 +37,7 @@ jobs:
       - name: pull github2gitlab
         uses: actions/checkout@v3
         with:
-          repository: jakob-fritz/github2gitlab_action
+          repository: jakob-fritz/github2gitlab_action@f43c39af0fc975c3c6033ec1db5a3444bc07cea8
           ref: master
           path: github2gitlab_action
       - name: check cloning
