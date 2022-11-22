@@ -15,3 +15,4 @@ so that the GitHub-CI can push to GitLab
 If you forked the Repo, please activate the Github-Actions in the "Actions"-Tad, then your own credentials are used.
 
 Maybe all these steps are not necessary at all. Let's see...
+There is the possibility, that this can be circumvented by using the credentials of the main contributor
