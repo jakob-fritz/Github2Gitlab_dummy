@@ -12,6 +12,6 @@ so that the GitHub-CI can push to GitLab
 - Add this token in Github as Action-Secret (named "GITLAB_TOKEN")
 - Ask the maintainer of the repo to add your user to the Gitlab-Repo as well (with at leas Developer-Rights)
 
-If you forked the Repo, please activate the Github-Actions in the "Actions"-Tad
+If you forked the Repo, please activate the Github-Actions in the "Actions"-Tad, then your own credentials are used
 
 Maybe all these steps are not necessary at all. Let's see...
