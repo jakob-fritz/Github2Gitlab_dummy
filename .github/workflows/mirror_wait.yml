@@ -6,7 +6,8 @@ env:
   GITLAB_USERNAME: ${{ secrets.GITLAB_USERNAME }}
   GITLAB_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
   GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-  GITLAB_REPO_URL: "codebase.helmholtz.cloud/j.fritz/github2gitlab_dummy.git" # without https:// at beginning!
+  # Repo-URL without https:// at beginning!
+  GITLAB_REPO_URL: "codebase.helmholtz.cloud/j.fritz/github2gitlab_dummy.git"
   FORCE_PUSH: "true"
   GITLAB_HOSTNAME: "codebase.helmholtz.cloud"
   GITLAB_URL: "https://codebase.helmholtz.cloud"
@@ -57,17 +58,17 @@ jobs:
           chmod +x ./github2gitlab_action/bin/mirror.sh
           chmod +x ./github2gitlab_action/bin/getpasswd.sh
           ./github2gitlab_action/bin/mirror.sh
-      - name: Update Merge-Requests
-        run: |
-          chmod +x ./github2gitlab_action/bin/getpasswd.sh
-          github2gitlab \
-            --gitlab-url "$GITLAB_URL" \
-            --gitlab-token "${{ secrets.GITLAB_TOKEN }}" \
-            --gitlab-repo "j.fritz/github2gitlab_dummy" \
-            --gitlab-repo-id "6234" \
-            --github-token "${{ secrets.GITHUB_TOKEN }}" \
-            --github-repo jakob-fritz/Github2Gitlab_dummy \
-            --ignore-closed
+      # - name: Update Merge-Requests
+      #   run: |
+      #     chmod +x ./github2gitlab_action/bin/getpasswd.sh
+      #     github2gitlab \
+      #       --gitlab-url "$GITLAB_URL" \
+      #       --gitlab-token "${{ secrets.GITLAB_TOKEN }}" \
+      #       --gitlab-repo "j.fritz/github2gitlab_dummy" \
+      #       --gitlab-repo-id "6234" \
+      #       --github-token "${{ secrets.GITHUB_TOKEN }}" \
+      #       --github-repo jakob-fritz/Github2Gitlab_dummy \
+      #       --ignore-closed
       - name: Get state of Gitlab-CI
         run: |
           chmod +x ./github2gitlab_action/bin/get_ci_state.sh
