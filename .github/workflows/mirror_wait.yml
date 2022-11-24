@@ -35,14 +35,14 @@ jobs:
       - name: pull github2gitlab
         uses: actions/checkout@v3
         with:
-          repository: jakob-fritz/github2gitlab_action
-          ref: master
+          repository: jakob-fritz/gitlab-mirror-and-ci-action
+          ref: non_docker
           path: github2gitlab_action
       - name: Mirror
         run: |
-          chmod +x ./github2gitlab_action/bin/mirror.sh
-          ./github2gitlab_action/bin/mirror.sh
+          chmod +x ./github2gitlab_action/mirror.sh
+          ./github2gitlab_action/mirror.sh
       - name: Get state of Gitlab-CI
         run: |
-          chmod +x ./github2gitlab_action/bin/get_ci_state.sh
-          ./github2gitlab_action/bin/get_ci_state.sh
+          chmod +x ./github2gitlab_action/get_ci_state.sh
+          ./github2gitlab_action/get_ci_state.sh
