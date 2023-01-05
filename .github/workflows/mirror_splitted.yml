@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Mirror
-      uses: jakob-fritz/github2lab_action@make_action_work
+      uses: jakob-fritz/github2lab_action@main
       env:
         MODE: 'mirror' # Either 'mirror', 'get_status', or 'both'
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
@@ -27,7 +27,7 @@ jobs:
       run: |
         echo "This can be a single or many jobs before querying the result from Gitlab-CI"
     - name: Get status
-      uses: jakob-fritz/github2lab_action@make_action_work
+      uses: jakob-fritz/github2lab_action@main
       env:
         MODE: 'get_status' # Either 'mirror', 'get_status', or 'both'
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
