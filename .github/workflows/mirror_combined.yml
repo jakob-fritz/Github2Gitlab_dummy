@@ -18,5 +18,5 @@ jobs:
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         FORCE_PUSH: "true"
         GITLAB_HOSTNAME: "codebase.helmholtz.cloud"
-        GITLAB_PROJECT_ID: "6234"
+        GITLAB_PROJECT_ID: "6235"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
