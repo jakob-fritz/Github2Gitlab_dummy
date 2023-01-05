@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-name: Mirror and run GitLab CI
+name: Combined - Mirror and run GitLab CI
 
 on: [push, pull_request_target]
 
@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Mirror and get status
-      uses: jakob-fritz/github2lab_action@main
+      uses: jakob-fritz/github2lab_action@make_action_work
       env:
         MODE: 'both' # Either 'mirror', 'get_status', or 'both'
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}

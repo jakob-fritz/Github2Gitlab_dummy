@@ -1,4 +1,4 @@
-name: Mirror and run GitLab CI
+name: OLD - Mirror and run GitLab CI
 
 on: [push, pull_request_target]
 
