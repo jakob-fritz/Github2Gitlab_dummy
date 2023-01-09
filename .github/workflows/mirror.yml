@@ -2,12 +2,25 @@
 #
 # SPDX-License-Identifier: MIT
 
-name: Splitted - Mirror and run GitLab CI
+name: Mirror and run GitLab CI
 
 on: [push, pull_request_target]
 
 jobs:
-  github2lab:
+  combined_github2lab:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Mirror and get status
+      uses: jakob-fritz/github2lab_action@main
+      env:
+        MODE: 'both' # Either 'mirror', 'get_status', or 'both'
+        GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        FORCE_PUSH: "true"
+        GITLAB_HOSTNAME: "codebase.helmholtz.cloud"
+        GITLAB_PROJECT_ID: "6234"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  splitted_github2lab:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
