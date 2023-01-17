@@ -57,6 +57,9 @@ jobs:
         GITLAB_HOSTNAME: "codebase.helmholtz.cloud"
         GITLAB_PROJECT_ID: "6234"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: test updated files
+      run: |
+        git status
     - name: push artifact
       uses: actions/upload-artifact@v3
       with:
