@@ -61,3 +61,5 @@ This file adds a job that triggers a CI-Pipeline in Gitlab.
 Nothing special. Just contribute to the project as you regularly do
 (and as the project requests). Your contributions are automatically
 tested in the Gitlab-Repo (once the maintainer approved it).
+
+Making a new commit to the dummy-repo
