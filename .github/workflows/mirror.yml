@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Mirror and get status
-      uses: jakob-fritz/github2lab_action@Iss27_forked_repo
+      uses: jakob-fritz/github2lab_action@main
       env:
         MODE: 'both' # Either 'mirror', 'get_status', or 'both'
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Mirror
-      uses: jakob-fritz/github2lab_action@Iss27_forked_repo
+      uses: jakob-fritz/github2lab_action@main
       env:
         MODE: 'mirror' # Either 'mirror', 'get_status', or 'both'
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
@@ -40,7 +40,7 @@ jobs:
       run: |
         echo "This can be a single or many jobs before querying the result from Gitlab-CI"
     - name: Get status
-      uses: jakob-fritz/github2lab_action@Iss27_forked_repo
+      uses: jakob-fritz/github2lab_action@main
       env:
         MODE: 'get_status' # Either 'mirror', 'get_status', or 'both'
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
@@ -48,3 +48,17 @@ jobs:
         GITLAB_HOSTNAME: "codebase.helmholtz.cloud"
         GITLAB_PROJECT_ID: "6234"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Get artifact
+      uses: jakob-fritz/github2lab_action@main
+      env:
+        MODE: 'get_artifact' # Either 'mirror', 'get_status', or 'both'
+        GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        FORCE_PUSH: "true"
+        GITLAB_HOSTNAME: "codebase.helmholtz.cloud"
+        GITLAB_PROJECT_ID: "6234"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: push artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: Gitlab-CI-Artifacts
+        path: artifacts/
